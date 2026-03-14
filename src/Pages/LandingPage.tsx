@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring, type Variants} from "motion/react"
-import {
-  FaHeart,
-  FaStar,
-  FaRegClock,
-  FaCalendarCheck
-} from 'react-icons/fa';
+import { FaHeart, FaStar, FaRegClock, FaCircle, FaCalendarCheck, FaLocationDot } from 'react-icons/fa6';
 import Header from '../Components/Header';
 import HeroSection from '../Components/HeroSection';
 import QuickLinks from '../Components/QuickLinks';
 import SpecialtiesSection from '../Components/SpecialtiesSection';
-import WhyChooseUs from '../Components/WhyChooseUs';
-import TrustedPartners from '../Components/TrustedPartners';
+import Request from '../Components/Requestacall';
+import Services from '../Components/Services';
 import TestimonialsSection from '../Components/Testimonials';
+import WorkSectionSection from '../Components/WorkSection';
 import Footer from '../Components/Footer';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
+import Blogs from '../Components/Blogs';
+import Whyus from '../Components/Whyus';
+
+
+import SocialSticky from '../Components/SocialIcon';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Animation Variants
 const fadeInUp : Variants = {
@@ -38,100 +40,75 @@ const staggerContainer : Variants = {
 
 // Doctors Section
 const DoctorsSection: React.FC = () => {
-  const doctors = [
-    { 
-      name: 'Dr. Michael Brown', 
-      specialty: 'Psychologist', 
-      location: 'Minneapolis, MN', 
-      fee: 650, 
-      rating: 5.0, 
-      time: '30 Min',
-      image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400',
-      available: true
-    },
-    { 
-      name: 'Dr. Nicholas Tello', 
-      specialty: 'Pediatrician', 
-      location: 'Ogden, IA', 
-      fee: 350, 
-      rating: 4.6, 
-      time: '60 Min',
-      image: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400',
-      available: true
-    },
-    { 
-      name: 'Dr. Harold Bryant', 
-      specialty: 'Neurologist', 
-      location: 'Winona, MS', 
-      fee: 500, 
-      rating: 4.8, 
-      time: '30 Min',
-      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400',
-      available: false
-    },
+  interface Department {
+    id: number;
+    name: string;
+    image: string;
+    rating: string;
+    avgWaitTime: string;
+    baseConsultation: string;
+    themeColor: string;
+    url: string;
+    specialistsAvailable: number;
+  }
 
-    // --- additional data ---
-    { 
-      name: 'Dr. Sarah Johnson', 
-      specialty: 'Cardiologist', 
-      location: 'Austin, TX', 
-      fee: 800, 
-      rating: 4.9, 
-      time: '45 Min',
-      image: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=400',
-      available: true
+  const departments: Department[] = [
+    {
+      id: 1,
+      name: "Eye Care",
+      image: "./assets/service/eyecare-01.png",
+      rating: "4.9",
+      avgWaitTime: "15 Min",
+      baseConsultation: "₹500",
+      themeColor: "text-emerald-600 bg-cyan-100/50",
+      url: "./eyecare",
+      specialistsAvailable: 6
     },
-    { 
-      name: 'Dr. Emily Carter', 
-      specialty: 'Dermatologist', 
-      location: 'San Diego, CA', 
-      fee: 400, 
-      rating: 4.7, 
-      time: '20 Min',
-      image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=400',
-      available: true
+    {
+      id: 2,
+      name: "Women's Care",
+      image: "./assets/service/maternity-care-01.png",
+      rating: "4.8",
+      avgWaitTime: "20 Min",
+      baseConsultation: "₹800",
+      themeColor: "text-emerald-600 bg-emerald-50",
+      url: "./maternity",
+      specialistsAvailable: 6
     },
-    { 
-      name: 'Dr. James Wilson', 
-      specialty: 'Orthopedic Surgeon', 
-      location: 'Denver, CO', 
-      fee: 750, 
-      rating: 4.5, 
-      time: '60 Min',
-      image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=400',
-      available: false
+    {
+      id: 3,
+      name: "Paediatric Care",
+      image: "./assets/service/paediatric-care-01.png",
+      rating: "5.0",
+      avgWaitTime: "10 Min",
+      baseConsultation: "₹600",
+      themeColor: "text-emerald-600 bg-emerald-50",
+      url: "./paediatric",
+      specialistsAvailable: 5
     },
-    { 
-      name: 'Dr. Olivia Martinez', 
-      specialty: 'Gynecologist', 
-      location: 'Miami, FL', 
-      fee: 550, 
-      rating: 4.8, 
-      time: '40 Min',
-      image: 'https://images.unsplash.com/photo-1551601651-05d0b7cfc6c5?auto=format&fit=crop&q=80&w=400',
-      available: true
+    {
+      id: 4,
+      name: "Cosmetic Gynae",
+      image: "./assets/service/cosmeticgynae.png",
+      rating: "4.7",
+      avgWaitTime: "30 Min",
+      baseConsultation: "₹1200",
+      themeColor: "text-emerald-600 bg-emerald-50",
+      url: "./cosmetic-gynae",
+      specialistsAvailable: 2
     },
-    { 
-      name: 'Dr. Daniel Lee', 
-      specialty: 'General Physician', 
-      location: 'San Jose, CA', 
-      fee: 300, 
-      rating: 4.4, 
-      time: '15 Min',
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=400',
-      available: true
-    },
-    { 
-      name: 'Dr. Aisha Khan', 
-      specialty: 'Endocrinologist', 
-      location: 'Edison, NJ', 
-      fee: 600, 
-      rating: 4.6, 
-      time: '30 Min',
-      image: 'https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&q=80&w=400',
-      available: false
+    {
+      id: 5,
+      name: "IVF",
+      image: "./assets/service/ivf-care.png",
+      rating: "4.6",
+      avgWaitTime: "15 Min",
+      baseConsultation: "₹1200",
+      themeColor: "text-emerald-600 bg-emerald-50",
+      url: "./ivf",
+      specialistsAvailable: 2
     }
-  ];
+  ]; 
 
   const [first, setfirst] = useState([]);
 
@@ -145,8 +122,8 @@ const DoctorsSection: React.FC = () => {
   
 
   return (
-    <section className="py-24 bg-gray-50/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-18 bg-gray-100 -mt-18">
+      <div className="max-w-7xl mx-auto pt-10 px-4 sm:px-6 lg:px-8">
         
         {/* Header - Matching your Specialties style */}
         <motion.div
@@ -154,99 +131,104 @@ const DoctorsSection: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mb-20"
+          className="text-center mb-8"
         >
-          <span className="bg-blue-600 text-blue-50 px-4 py-1.5 rounded-full text-sm font-bold tracking-wide uppercase mb-4 inline-block">
-            Expert Medical Team
+          <span className="inline-block text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-2 rounded-full font-bold tracking-wider uppercase text-xs mb-4 shadow-lg shadow-blue-200">
+            Our Departments
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-            Our <span className="text-blue-600">Highlighted</span> Doctors
+          <h2 className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Medical Support For <br/><span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">Every Need</span>
           </h2>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{ delay: 4000 }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          className="pb-16"
         >
-          {doctors.map((doctor, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              className="group relative"
-            >
-              {/* Main Card Container */}
-              <div className="relative bg-white rounded-4xl p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100">
+          {departments.map((dept) => (
+            <SwiperSlide key={dept.id}>
+              <div className="group bg-white rounded-[0.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-100 transition-all duration-500 overflow-hidden">
                 
-                {/* Image Section */}
-                <div className="relative h-80 w-full overflow-hidden rounded-3xl bg-gray-100">
+                {/* Visual Area */}
+                <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={doctor.image} 
-                    alt={doctor.name} 
-                    className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    src={dept.image} 
+                    alt={dept.name} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  
-                  {/* Floating Badges */}
-                  <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
-                    <span className={`px-3 py-1.5 rounded-lg text-xs font-bold backdrop-blur-md flex items-center gap-1.5 ${doctor.available ? 'bg-emerald-500/90 text-white' : 'bg-gray-500/90 text-white'}`}>
-                      <span className={`w-2 h-2 rounded-full animate-pulse ${doctor.available ? 'bg-white' : 'bg-gray-300'}`} />
-                      {doctor.available ? 'Available Today' : 'Next Available: Mon'}
-                    </span>
-                    <button className="p-2.5 bg-white/90 backdrop-blur-md rounded-xl text-gray-400 hover:text-red-500 transition-colors shadow-sm">
-                      <FaHeart size={18} />
-                    </button>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <p className="text-white text-xs font-medium">Top-rated facility with advanced medical tech.</p>
                   </div>
-
-                  {/* Rating Overlay */}
-                  <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1 shadow-lg">
-                    <FaStar className="text-yellow-400" size={14} />
-                    <span className="font-bold text-gray-900 text-sm">{doctor.rating}</span>
+                  
+                  {/* Rating Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="flex items-center gap-1 bg-white/90 backdrop-blur text-slate-900 px-3 py-1.5 rounded-full text-xs font-black shadow-sm">
+                      <FaStar className="text-orange-400" /> {dept.rating}
+                    </span>
                   </div>
                 </div>
 
-                {/* Content Section */}
-                <div className="pt-6 pb-2 px-2">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <p className="text-blue-600 font-bold text-xs uppercase tracking-widest mb-1">{doctor.specialty}</p>
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{doctor.name}</h3>
+                {/* Content Area */}
+                <div className="p-6">
+                  {/* Category & Status */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`px-2.5 py-2 rounded-xl text-[11px] font-black uppercase tracking-wider ${dept.themeColor}`}>
+                      {dept.specialistsAvailable} Specialists Active
+                    </span>
+                    <span className="flex items-center gap-1.5 text-green-500 text-[10px] font-black uppercase tracking-widest">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+                      Open Now
+                    </span>
+                  </div>
+
+                  {/* Title - Large and Bold */}
+                  <a href={dept.url}><h3 className="text-2xl md:text-2xl font-medium text-[#006EB7] mb-2 hover:text-green-600 transition-colors">
+                    {dept.name}
+                  </h3> </a>
+
+                  <div className="flex items-center gap-4 text-slate-400 text-xs font-medium mb-6">
+                    <div className="flex items-center gap-1.5">
+                      <FaLocationDot className="text-blue-500" />
+                      <span>In-Clinic</span>
+                    </div>
+                    <span className="text-slate-200">|</span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-bold text-slate-600">Avg Wait:</span> {dept.avgWaitTime}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 text-gray-500 text-sm mb-6 font-medium">
-                    <div className="flex items-center gap-1">
-                      <HiOutlineLocationMarker size={18} className="text-gray-400" />
-                      {doctor.location}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <FaRegClock size={15} className="text-gray-400" />
-                      {doctor.time}
-                    </div>
-                  </div>
-
-                  {/* Pricing and Action */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-50">
-                    <div>
-                      <p className="text-[10px] uppercase font-bold text-gray-400 tracking-tighter">Consultation Fee</p>
-                      <p className="text-2xl font-black text-gray-900 tracking-tight">
-                        ${doctor.fee}<span className="text-sm font-normal text-gray-500">/hr</span>
-                      </p>
-                    </div>
-                    <button className="flex items-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-2xl font-bold text-sm hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-200 transition-all duration-300 active:scale-95">
-                      <FaCalendarCheck size={18} />
-                      Book Now
-                    </button>
+                  {/* Price & Book Now */}
+                  <div className="flex items-center justify-between pt-5 border-t border-slate-50">
+                    {/* <div>
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Starts From</p>
+                      <p className="text-2xl font-black text-slate-900 leading-none">{dept.baseConsultation}</p>
+                    </div> */}
+                    <a  href="./book-appointment" className="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-2xl hover:bg-slate-900 hover:w-full transition-all duration-500 group/btn relative overflow-hidden shadow-lg shadow-blue-100">
+                      <span className="absolute right-5 group-hover/btn:right-5 transition-all">
+                        <FaCalendarCheck size={20} />
+                      </span>
+                      <span className="opacity-0 group-hover/btn:opacity-100 pr-6 font-bold text-sm whitespace-nowrap transition-all">
+                        Book Appointment
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>
-
-              {/* Decorative background element */}
-              <div className="absolute -z-10 inset-0 bg-blue-600/5 rounded-4xl translate-y-4 scale-[0.95] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </motion.div>
+        </Swiper>
       </div>
     </section>
   );
@@ -274,15 +256,20 @@ const ScrollProgress: React.FC = () => {
 const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      
+      <SocialSticky />
       <ScrollProgress />
       <Header />
       <HeroSection />
       <QuickLinks />
-      <SpecialtiesSection />
       <DoctorsSection />
-      <WhyChooseUs/>
-      <TrustedPartners/>
+      <Services />
+      {/* <Marquee/> */}
+      <WorkSectionSection/>
+      {/* <WhyChooseUs/> */}
+      <Whyus />
       <TestimonialsSection />
+      <Blogs/>
       <Footer />
     </div>
   );

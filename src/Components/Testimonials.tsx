@@ -3,46 +3,125 @@ import { motion } from 'framer-motion';
 import { FaStar, FaQuoteLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectFade, Navigation } from 'swiper/modules';
+import Counter from '../Components/Counter';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const TestimonialsSection: React.FC = () => {
-  const testimonials = [
-    { name: 'Deny Hendrawan', location: 'United States', text: 'I had a wonderful experience; the staff was friendly and attentive, and Dr. Smith took the time to explain everything clearly.', role: 'Patient' },
-    { name: 'Brooks Steave', location: 'Dallas, CA', text: 'My experience was excellent. The staff was polite and attentive, and the doctor took the time to explain every step clearly.', role: 'Patient' },
-    { name: 'Sofia Doe', location: 'Boston, USA', text: 'Highly professional medical team. The booking process was seamless and the facility was top-notch.', role: 'Patient' },
-    { name: 'Alex Johnson', location: 'London, UK', text: 'The best dental care I have received in years. Modern equipment and very gentle approach.', role: 'Patient' },
-  ];
-
-  const stats = [
-    { count: '500+', label: 'Doctors Available' },
-    { count: '18+', label: 'Specialities' },
-    { count: '30K', label: 'Bookings Done' },
-    { count: '97+', label: 'Hospitals & Clinic' },
-    { count: '317+', label: 'Lab Tests' },
-  ];
+const testimonials = [
+    { 
+      name: 'Deepak Sonekar', 
+      location: 'Raipur, India', 
+      text: 'Special thanks to Dr. Phebe Masih. The campus is well-maintained and clean. The staff treated us like family members; they didn’t let us feel like we were in a hospital, but at home.', 
+      role: 'Patient Relative' 
+    },
+    { 
+      name: 'Mrs. Nisha Pruthi', 
+      location: 'Chhattisgarh', 
+      text: 'Dr. Swati Mahobia is a very humble doctor. She explains each and every thing properly and makes the patient feel very comfortable during the consultation.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Jaya Chauhan', 
+      location: 'Raipur, India', 
+      text: 'The service from the attending doctors and staff is very helpful and caring. Special thanks to Dr. Swati Mahobia for her expertise and kindness during my treatment.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Sujeet Kumar Thawait', 
+      location: 'Raipur, India', 
+      text: 'Best eye hospital in Raipur. Dr. Ashish Mahobia and his entire dedicated team are committed to providing world-class treatment to all their patients.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Vibha', 
+      location: 'Raipur, India', 
+      text: 'Excellent treatment and a very clean, hygienic environment. All the facilities are top-notch and the nursing team is very attentive.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Yogendra', 
+      location: 'Raipur, India', 
+      text: 'Treating patients as family. Good behavior, hospitality, and kindness. Thanks to Dr. Swati for your blessings and successful treatment.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Vijaylaxmi', 
+      location: 'Raipur, India', 
+      text: 'Best nursing home in Raipur with superb facilities and renowned specialist doctors. The behavior of the entire staff is awesome.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Chhatrapati Taram', 
+      location: 'Raipur, India', 
+      text: 'All the facilities are very good, and every staff member is very co-operative. Thanks a lot to the entire team of Sai Baba Nursing Home.', 
+      role: 'Patient Relative' 
+    },
+    { 
+      name: 'Vikas Kumar', 
+      location: 'Raipur, India', 
+      text: 'One of the best hospitals I have visited. Everything from the doctors to the nursing staff and cleanliness is excellent.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Khemraj Sinha', 
+      location: 'Raipur, India', 
+      text: 'Very good in service. The hospital staff behavior is very professional and the medical care provided is highly reliable.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Sony Sharma', 
+      location: 'Raipur, India', 
+      text: 'Excellent eye hospital. The treatment was successful and the hygiene standards maintained here are very high compared to others.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Archana Tiwari', 
+      location: 'Raipur, India', 
+      text: 'Very helpful staff. They assisted us through every step of the billing and admission process without any hassle.', 
+      role: 'Patient Relative' 
+    },
+    { 
+      name: 'Rajesh Panwar', 
+      location: 'Chhattisgarh', 
+      text: 'Very good facility and treatment with advanced technology. We saw great results for my father’s eye surgery here.', 
+      role: 'Patient Relative' 
+    },
+    { 
+      name: 'Khogopati', 
+      location: 'Raipur, India', 
+      text: 'It is a very good hospital for women’s healthcare. The doctors are highly experienced and the environment is safe.', 
+      role: 'Patient' 
+    },
+    { 
+      name: 'Dushyant Thakur', 
+      location: 'Raipur, India', 
+      text: 'Overall a very good experience. The hospital is well-equipped and the response from the doctors is very prompt.', 
+      role: 'Patient' 
+    }
+];
 
   return (
-    <section className="py-24 bg-linear-to-b from-white to-blue-50/50 overflow-hidden">
+    <section className="py-18 bg-[url(./assets/testimonial-bg.jpg)] bg-cover bg-no-repeat overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wider text-blue-50 uppercase bg-blue-600 rounded-full"
+            className="inline-block text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-2 rounded-full font-bold tracking-wider uppercase text-xs mb-4 shadow-lg shadow-blue-200"
           >
             Testimonials
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight"
+            className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight"
           >
-            15k Users <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Trust Doccure</span>
+            15k Users <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">Trust SBH</span>
           </motion.h2>
         </div>
 
@@ -77,7 +156,7 @@ const TestimonialsSection: React.FC = () => {
             >
             {testimonials.map((item, index) => (
               <SwiperSlide key={index} className="h-full">
-                <div className="bg-white border border-gray-100 p-8 rounded-3xl shadow-xl shadow-blue-900/5 flex flex-col h-full hover:border-blue-200 transition-colors duration-300">
+                <div className="bg-white border border-gray-100 p-8 rounded-[0.5rem] shadow-xl shadow-blue-900/5 flex flex-col h-full hover:border-blue-200 transition-colors duration-300">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
@@ -106,25 +185,7 @@ const TestimonialsSection: React.FC = () => {
           </Swiper>
         </div>
 
-        {/* Modern Counter Stats */}
-        <div className="mt-12 grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8">
-          {stats.map((stat, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              className="relative group p-6 text-center bg-white/40 backdrop-blur-sm rounded-2xl border border-white/60 shadow-sm"
-            >
-              <h4 className="text-3xl font-black text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
-                {stat.count}
-              </h4>
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <Counter />
       </div>
     </section>
   );

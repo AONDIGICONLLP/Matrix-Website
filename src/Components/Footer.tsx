@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               Treatments
             </h3>
             <ul className="space-y-2">
-              {['Dental', 'Cardiac', 'Spinal Cord', 'Hair Growth', 'Anemia & Disorder'].map((item) => (
+              {['Glaucoma', 'Refractive Surgery', 'Cataract Surgery', 'IVF Treatment', 'IUI Treatment'].map((item) => (
                 <li key={item}>
                   <a
                     href="#"
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
               Specialities
             </h3>
             <ul className="space-y-2">
-              {['Transplant', 'Cardiologist', 'Oncology', 'Pediatrics', 'Gynacology'].map((item) => (
+              {['Ophthalmic Care', 'Gynaecology', 'Cosmetic Gynae', 'Paediatrics', 'Diagnostic Service'].map((item) => (
                 <li key={item}>
                   <a
                     href="#"
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
-            © 2025 Doccure. All rights reserved.
+            © 2026 Sai Baba Hospital. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {['Legal Notice', 'Privacy Policy', 'Refund Policy'].map(item => (

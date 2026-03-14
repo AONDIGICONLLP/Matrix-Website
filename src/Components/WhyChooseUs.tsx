@@ -49,18 +49,18 @@ const reasons = [
 
 const WhyChooseUs: React.FC = () => {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-18 bg-white overflow-hidden">
       {/* Visual background replacements for missing assets */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/40 rounded-full blur-[100px]" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-orange-100/30 rounded-full blur-[100px]" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <motion.span 
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold tracking-wider text-blue-50 uppercase bg-blue-600 rounded-full"
+                className="inline-block text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-2 rounded-full font-bold tracking-wider uppercase text-xs mb-4 shadow-lg shadow-blue-200"
             >
                  Why Book With Us
             </motion.span>
@@ -68,9 +68,9 @@ const WhyChooseUs: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight"
+            className="text-2xl md:text-5xl font-bold text-gray-900 leading-tight"
           >
-            Compelling <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600">Reasons</span> to Choose
+            Compelling <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">Reasons</span><br/> to Choose
           </motion.h2>
         </div>
 
@@ -85,37 +85,27 @@ const WhyChooseUs: React.FC = () => {
 
           {reasons.map((reason, index) => (
             <motion.div
-  key={index}
-  variants={fadeInUp}
-  whileHover={{ y: -12 }}
-  className="group relative p-10 bg-white rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:border-slate-400 transition-all duration-500"
->
+              key={index}
+              variants={fadeInUp}
+              whileHover={{ y: -12 }}
+              className="group relative p-10 bg-white rounded-lg border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:border-slate-400 transition-all duration-500"
+            >
 
               {/* Animated Glow on Hover */}
               <div className="absolute inset-0 rounded-[3rem] bg-linear-to-br from-transparent to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative z-10">
-                <div className={`w-20 h-20 ${reason.bgColor} rounded-4xl flex items-center justify-center mb-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-sm`}>
+              <div className="relative z-10 text-center">
+                <div className={`w-20 h-20 ${reason.bgColor} rounded-full flex items-center justify-center mx-auto mb-8 rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-sm`}>
                   {reason.icon}
                 </div>
                 
-                <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">
+                <h3 className="text-2xl font-bold font-black text-slate-900 mb-4 tracking-tight">
                   {reason.title}
                 </h3>
                 
-                <p className="text-slate-600 leading-relaxed font-medium">
+                <p className="text-slate-600 leading-relaxed font-medium font-normal">
                   {reason.description}
                 </p>
-
-                <div className="mt-8 flex items-center text-blue-600 font-bold text-sm cursor-pointer overflow-hidden group/link">
-                  <span className="relative">
-                    Explore Details
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 translate-x-[-110%] group-hover/link:translate-x-0 transition-transform duration-300" />
-                  </span>
-                  <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
               </div>
             </motion.div>
           ))}

@@ -6,6 +6,8 @@
   ],
   "compilerOptions": {
     "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "esModuleInterop": true,
     "skipLibCheck": true
   }
