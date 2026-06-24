@@ -1,66 +1,53 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import LandingPage from "./Pages/LandingPage"
-import Doctors from "./Pages/Doctors"
-import AboutUs from "./Pages/AboutUs"
-import Blogs from "./Pages/Blogs"
-import Gallery from "./Pages/Gallery"
-import Signup from "./Pages/SignUp"
-import SignIn from "./Pages/SignIn"
-import Departments from "./Pages/Departments"
-import Eyecare from "./Pages/Eyecare"
-import Maternity from "./Pages/Maternity"
- import Paediatric from "./Pages/Paediatric"
-import Gynae from "./Pages/Cosmetic-gynae"
-import Ivf from "./Pages/Ivf"
-import Cataract from "./Pages/Cataract"
-import ContactUs from "./Pages/ContactUs"
-import Labtest from "./Pages/Labtest"
-import HealthCare from "./Pages/Healthcare"
-import Pharmacy from "./Pages/Pharmacy"
-import Hospitals from "./Pages/Hospitals"
-import Career from "./Pages/Career"
-import Appointment from "./Pages/Appointment"
-import Refractive from "./Pages/Refractive"
-import Cornea from "./Pages/Cornea"
-import Retina from "./Pages/Retina"
-import PediatricEyeCare from "./Pages/PaediaEyeCare"
-import Glaucoma from "./Pages/Glaucoma"
-import Specialities from "./Pages/Specialities"
+import Home from "./Pages/Home"
+import About from "./Pages/Aboutus"
+import Ceo from "./Pages/CeoProfile"
+import Team from "./Pages/Team"
+import Products from "./Pages/Products"
+import Service from "./Pages/Services"
+import Contactus from "./Pages/Contactus"
+import Hematology from "./Pages/Hematology"
+import Biochemistry from "./Pages/Biochemistry"
+import Electrolyte from "./Pages/Electrolyte"
+import Immunoassay from "./Pages/Immunoassay"
+import Elisa from "./Pages/Elisa"
+import Coagulation from "./Pages/Coagulation"
+import UrineAnalyzer from "./Pages/UrineAnalyzer"
+import Protien from "./Pages/Protine"
+import Hplc from "./Pages/Hplc"
+import Blood from "./Pages/BloodGas"
+import HB from "./Pages/HbMeter"
+import PCOT from "./Pages/Poct"
+import Microscope from "./Pages/Microscopes"
+import Centrifuges from "./Pages/Centrifuges"
 import { Contact } from "lucide-react"
 
 const App = () => {
   return (
     <>
-    
     <BrowserRouter basename="/">
       <Routes>
-        <Route path="/" element={<LandingPage/>} />
-        <Route path="/doctors" element={<Doctors/>}/>
-        <Route path="/departments" element={<Departments/>}/>
-        <Route path="/eyecare" element={<Eyecare/>}/>
-        s<Route path="/maternity" element={<Maternity/>}/>
-        <Route path="/paediatric" element={<Paediatric/>}/>
-        <Route path="/cosmetic-gynae" element={<Gynae/>}/>
-        <Route path="/ivf" element={<Ivf/>}/>
-        <Route path="/contactus" element={<ContactUs/>}/>
-        <Route path="/aboutus" element={<AboutUs/>}/>
-        <Route path="/blogs" element={<Blogs/>}/>
-        <Route path="/gallery" element={<Gallery/>}/>
-        <Route path="/signin" element={<SignIn/>}/>
-        <Route path="/signup" element={<Signup/>}/>
-        <Route path="/labtesting" element={<Labtest/>}/>
-        <Route path="/healthcare" element={<HealthCare/>}/>
-        <Route path="/pharmacy" element={<Pharmacy/>}/>
-        <Route path="/career" element={<Career/>}/>
-        <Route path="/hospitals" element={<Hospitals/>}/>
-        <Route path="/book-appointment" element={<Appointment/>}/>
-        <Route path="/cataract" element={<Cataract/>}/>
-        <Route path="/refractive" element={<Refractive/>}/>
-        <Route path="/cornea" element={<Cornea/>}/>
-        <Route path="/retina" element={<Retina/>}/>
-        <Route path="/paediaeyecare" element={<PediatricEyeCare/>}/>
-        <Route path="/glaucoma" element={<Glaucoma/>}/>
-        <Route path="/our-specialities" element={<Specialities/>}/>
+        <Route path="/" element={<Home/>} />
+        <Route path="/aboutus" element={<About/>} />
+        <Route path="/ceo-message" element={<Ceo/>} />
+        <Route path="/our-team" element={<Team/>} />
+        <Route path="/products" element={<Products/>} />
+        <Route path="/services" element={<Service/>} />
+        <Route path="/contactus" element={<Contactus/>} />
+        <Route path="/hematology" element={<Hematology/>} />
+        <Route path="/biochemistry" element={<Biochemistry/>} />
+        <Route path="/electrolyte" element={<Electrolyte/>} />
+        <Route path="/immunoassay" element={<Immunoassay/>} />
+        <Route path="/coagulation" element={<Coagulation/>} />
+        <Route path="/elisa" element={<Elisa/>} />
+        <Route path="/urine-analyzer" element={<UrineAnalyzer/>} />
+        <Route path="/protien" element={<Protien/>} />
+        <Route path="/hplc" element={<Hplc/>} />
+        <Route path="/blood-gas" element={<Blood/>} />
+        <Route path="/hb-meters" element={<HB/>} />
+        <Route path="/poct" element={<PCOT/>} />
+        <Route path="/microscopes" element={<Microscope/>} />
+        <Route path="/centrifuges" element={<Centrifuges/>} />
       </Routes>
     </BrowserRouter>
     </>

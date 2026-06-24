@@ -8,6 +8,7 @@ import Counter from '../Components/Counter';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import testimonialBg from "/assets/testimonial-bg.jpg";
 
 const TestimonialsSection: React.FC = () => {
 const testimonials = [

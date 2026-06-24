@@ -67,7 +67,6 @@ const Header: React.FC = () => {
 
   return (
     <>
-    <Request/>
     <TopHeader/>
       <motion.header 
         initial={{ y: -100 }}

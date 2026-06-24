@@ -1,4 +1,4 @@
-import SearchBox from '../Components/SearchBox';
+//import SearchBox from '../Components/SearchBox';
 import { Link } from "react-router-dom";
 import { FaChevronRight, FaHome } from "react-icons/fa";
 import type { IconType } from "react-icons";
@@ -17,7 +17,6 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, title }) => {
   const activeBg = items[items.length - 1]?.bg;
-
   return (
     <>
     <div
@@ -36,6 +35,20 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, title }) => {
     >
     {/* <div className="relative overflow-hidden bg-blue-600 py-14 mt-[6rem]"> */}
       {/* Background */}
+      {!activeBg && (
+        <div className="absolute inset-0 z-0 opacity-10">
+          <svg
+            className="h-full w-full"
+            preserveAspectRatio="none"
+            viewBox="0 0 1440 320"
+          >
+            <path
+              fill="#fff"
+              d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320H0Z"
+            />
+          </svg>
+        </div>
+      )}
       {!activeBg && (
         <div className="absolute inset-0 z-0 opacity-10">
           <svg
