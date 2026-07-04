@@ -88,7 +88,7 @@ export const ProductSlider: React.FC = () => {
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
                       onError={(e) => {
                         // High quality technical lab placeholder if individual images are absent
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1579154204601-01588f351167?q=80&w=300&auto=format&fit=crop";
+                        (e.target as HTMLImageElement).src = product.image;
                       }}
                     />
                     

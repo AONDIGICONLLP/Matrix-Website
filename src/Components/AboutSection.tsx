@@ -26,10 +26,10 @@ export const AboutPreview: React.FC = () => {
             </p>
 
             <div className="pt-4">
-              <button className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors group">
+              <a href='aboutus' className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors group">
                 <span>READ MORE</span>
                 <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
 

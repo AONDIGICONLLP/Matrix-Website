@@ -25,8 +25,8 @@ export const MainHeader: React.FC = () => {
                 >
                 <Menu className="w-6 h-6" />
                 </button>
-                <a href="index.html" className="block">
-                <img src="assets/img/matrix.png" className="h-12 w-auto" alt="Logo" />
+                <a href="/" className="block">
+                <img src="assets/img/matrix-tm.png" className="h-16 w-auto" alt="Logo" />
                 </a>
             </div>
 
@@ -46,39 +46,39 @@ export const MainHeader: React.FC = () => {
                     <ChevronDown className="w-4 h-4 text-gray-400" />
                     </button>
                     <ul className="absolute left-0 top-full w-48 bg-white border border-gray-100 rounded-b-xl shadow-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 space-y-1 z-50 text-sm">
-                    <li><a href="/aboutus" className="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all">About us</a></li>
-                    <li><a href="/ceo-message" className="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all">CEO Message</a></li>
+                    <li><a href="aboutus" className="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all">About us</a></li>
+                    <li><a href="ceo-message" className="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-all">CEO Message</a></li>
                     </ul>
                 </li>
 
                 {/* Pharmacy Dropdown (Active state configured) */}
                 <li className="relative group py-2">
                 {/* TOP LEVEL LINK FOR PRODUCTS */}
-                <a href="/products" className="flex items-center space-x-1 px-3 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                <a href="products" className="flex items-center space-x-1 px-3 font-semibold hover:text-blue-600 transition-colors">
                     <span>Products</span>
-                    <ChevronDown className="w-4 h-4 text-blue-600 group-hover:text-blue-700" />
+                    <ChevronDown className="w-4 h-4 group-hover:text-blue-600" />
                 </a>
                 
                 {/* MEGAMENU DROPDOWN CONTAINER */}
                 <div className="absolute left-0 top-full w-[560px] bg-white border border-gray-100 rounded-b-xl shadow-xl p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <div className="grid grid-cols-2 gap-4 items-center">
                     <ul className="space-y-2 text-sm text-gray-600">
-                        <li><a href="/hematology" className="block py-1 hover:text-blue-600 transition-colors">Hematology Analyzer & Reagents</a></li>
-                        <li><a href="/biochemistry" className="block py-1 hover:text-blue-600 transition-colors">Biochemistry Analyzer & Reagents</a></li>
-                        <li><a href="/electrolyte" className="block py-1 hover:text-blue-600 transition-colors">Electrolyte Analyzer</a></li>
-                        <li><a href="/immunoassay" className="block py-1 hover:text-blue-600 transition-colors">Immunoassay Analyzer</a></li>
-                        <li><a href="/coagulation" className="block py-1 hover:text-blue-600 transition-colors">Coagulation Analyzer</a></li>
-                        <li><a href="/urine-analyzer" className="block py-1 hover:text-blue-600 transition-colors">Urine Analyzer & Strips</a></li>
-                        <li><a href="/elisa" className="block py-1 hover:text-blue-600 transition-colors">Elisa Reader & Washer</a></li>
-                        <li><a href="/protien" className="block py-1 hover:text-blue-600 transition-colors">Protine Analyzer</a></li>
-                        <li><a href="/electrophoresis" className="block py-1 hover:text-blue-600 transition-colors">Electrophoresis</a></li>
-                        <li><a href="/turbidometers" className="block py-1 hover:text-blue-600 transition-colors">Turbidometers</a></li>
-                        <li><a href="/hplc" className="block py-1 hover:text-blue-600 transition-colors">HPLC Systems</a></li>
-                        <li><a href="/blood-gas" className="block py-1 hover:text-blue-600 transition-colors">Blood Gas Analyzer</a></li>
-                        <li><a href="/hb-meters" className="block py-1 hover:text-blue-600 transition-colors">HB Meters</a></li>
-                        <li><a href="/poct" className="block py-1 hover:text-blue-600 transition-colors">POCT</a></li>
-                        <li><a href="/microscopes" className="block py-1 hover:text-blue-600 transition-colors">Microscopes</a></li>
-                        <li><a href="/centrifuges" className="block py-1 hover:text-blue-600 transition-colors">Centrifuges</a></li>
+                        <li><a href="hematology" className="block py-1 hover:text-blue-600 transition-colors">Hematology Analyzer & Reagents</a></li>
+                        <li><a href="biochemistry" className="block py-1 hover:text-blue-600 transition-colors">Biochemistry Analyzer & Reagents</a></li>
+                        <li><a href="electrolyte" className="block py-1 hover:text-blue-600 transition-colors">Electrolyte Analyzer</a></li>
+                        <li><a href="immunoassay" className="block py-1 hover:text-blue-600 transition-colors">Immunoassay Analyzer</a></li>
+                        <li><a href="coagulation" className="block py-1 hover:text-blue-600 transition-colors">Coagulation Analyzer</a></li>
+                        <li><a href="urine-analyzer" className="block py-1 hover:text-blue-600 transition-colors">Urine Analyzer & Strips</a></li>
+                        <li><a href="elisa" className="block py-1 hover:text-blue-600 transition-colors">Elisa Reader & Washer</a></li>
+                        <li><a href="protien" className="block py-1 hover:text-blue-600 transition-colors">Protine Analyzer</a></li>
+                        <li><a href="electrophoresis" className="block py-1 hover:text-blue-600 transition-colors">Electrophoresis</a></li>
+                        <li><a href="turbidometers" className="block py-1 hover:text-blue-600 transition-colors">Turbidometers</a></li>
+                        <li><a href="hplc" className="block py-1 hover:text-blue-600 transition-colors">HPLC Systems</a></li>
+                        <li><a href="blood-gas" className="block py-1 hover:text-blue-600 transition-colors">Blood Gas Analyzer</a></li>
+                        <li><a href="hb-meters" className="block py-1 hover:text-blue-600 transition-colors">HB Meters</a></li>
+                        <li><a href="poct" className="block py-1 hover:text-blue-600 transition-colors">POCT</a></li>
+                        <li><a href="microscopes" className="block py-1 hover:text-blue-600 transition-colors">Microscopes</a></li>
+                        <li><a href="centrifuges" className="block py-1 hover:text-blue-600 transition-colors">Centrifuges</a></li>
                     </ul>
                     <div className="rounded-lg overflow-hidden h-full aspect-[4/3]">
                         <img src="assets/img/categories/category-14.webp" alt="Pharmacy preview" className="w-65 h-80 object-cover" />
@@ -89,22 +89,22 @@ export const MainHeader: React.FC = () => {
 
                 {/* Service Link */}
                 <li className="relative group py-7">
-                    <a href="/services" className="block py-1 px-3 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="services" className="block py-1 px-3 hover:text-blue-600 transition-colors">Services</a>
                 </li>
 
                 {/* Team Link */}
                 <li className="relative group py-7">
-                    <a href="/our-team" className="block py-1 px-3 hover:text-blue-600 transition-colors">Our Team</a>
+                    <a href="our-team" className="block py-1 px-3 hover:text-blue-600 transition-colors">Our Team</a>
                 </li>
 
                 {/* Gallery Link */}
                 <li className="relative group py-7">
-                    <a href="/" className="block py-1 px-3 hover:text-blue-600 transition-colors">Gallery</a>
+                    <a href="gallery" className="block py-1 px-3 hover:text-blue-600 transition-colors">Gallery</a>
                 </li>
 
                 {/* Contact Link */}
                 <li className="relative group py-7">
-                    <a href="/contactus" className="block py-1 px-3 hover:text-blue-600 transition-colors">Contact us</a>
+                    <a href="contactus" className="block py-1 px-3 hover:text-blue-600 transition-colors">Contact us</a>
                 </li>
                 </ul>
             </div>
@@ -130,7 +130,7 @@ export const MainHeader: React.FC = () => {
           
           {/* Mobile Shell Header Area */}
           <div className="flex items-center justify-between px-5 h-20 border-b border-gray-100 flex-shrink-0">
-            <img src="assets/img/matrix.png" className="h-9 w-auto" alt="Logo" />
+            <img src="assets/img/matrix-tm.png" className="h-9 w-auto" alt="Logo" />
             <button onClick={toggleMobileMenu} className="p-2 text-gray-400 hover:text-gray-600 rounded-lg">
               <X className="w-5 h-5" />
             </button>
@@ -155,58 +155,55 @@ export const MainHeader: React.FC = () => {
                   <ChevronDown className={`w-4 h-4 transform transition-transform text-gray-400 ${activeDropdown === 'about' ? 'rotate-180 text-blue-600' : ''}`} />
                 </button>
                 <ul className={`pl-4 space-y-1 text-sm font-medium text-gray-500 overflow-hidden transition-all duration-300 ${activeDropdown === 'about' ? 'max-h-24 py-1 mt-1' : 'max-h-0'}`}>
-                  <li><a href="/aboutus" className="block py-1.5 hover:text-blue-600">About us</a></li>
-                  <li><a href="/ceo-message" className="block py-1.5 hover:text-blue-600">CEO Message</a></li>
+                  <li><a href="aboutus" className="block py-1.5 hover:text-blue-600">About us</a></li>
+                  <li><a href="ceo-message" className="block py-1.5 hover:text-blue-600">CEO Message</a></li>
                 </ul>
               </li>
 
               {/* Products Compressible List Accordion Menu */}
               <li className="border-b border-gray-50 pb-2">
-                <button 
-                  onClick={() => toggleDropdown('products')} 
-                  className="flex items-center justify-between w-full py-2 text-left text-blue-600 hover:text-blue-700 transition-colors"
-                >
-                  <span>Products</span>
-                  <ChevronDown className={`w-4 h-4 transform transition-transform text-blue-600 ${activeDropdown === 'products' ? 'rotate-180' : ''}`} />
-                </button>
+                <a href="products" className="flex items-center justify-between w-full py-2 text-left hover:text-blue-700 transition-colors">
+                    <span>Products</span>
+                    <ChevronDown className="w-4 h-4 text-blue-600 group-hover:text-blue-700" />
+                </a>
                 <ul className={`pl-4 space-y-1 text-sm font-medium text-gray-500 overflow-y-auto transition-all duration-300 ${activeDropdown === 'products' ? 'max-h-60 py-1 mt-1 border-l-2 border-blue-50 pl-3' : 'max-h-0'}`}>
-                  <li><a href="/hematology" className="block py-1.5 hover:text-blue-600">Hematology Analyzer & Reagents</a></li>
-                  <li><a href="/biochemistry" className="block py-1.5 hover:text-blue-600">Biochemistry Analyzer & Reagents</a></li>
-                  <li><a href="/electrolyte" className="block py-1.5 hover:text-blue-600">Electrolyte Analyzer</a></li>
-                  <li><a href="/immunoassay" className="block py-1.5 hover:text-blue-600">Immunoassay Analyzer</a></li>
-                  <li><a href="/coagulation" className="block py-1.5 hover:text-blue-600">Coagulation Analyzer</a></li>
-                  <li><a href="/urine-analyzer" className="block py-1.5 hover:text-blue-600">Urine Analyzer & Strips</a></li>
-                  <li><a href="/elisa" className="block py-1.5 hover:text-blue-600">Elisa Reader & Washer</a></li>
-                  <li><a href="/protien" className="block py-1.5 hover:text-blue-600">Protine Analyzer</a></li>
-                  <li><a href="/electrophoresis" className="block py-1.5 hover:text-blue-600">Electrophoresis</a></li>
-                  <li><a href="/turbidometers" className="block py-1.5 hover:text-blue-600">Turbidometers</a></li>
-                  <li><a href="/hplc" className="block py-1.5 hover:text-blue-600">HPLC Systems</a></li>
-                  <li><a href="/blood-gas" className="block py-1.5 hover:text-blue-600">Blood Gas Analyzer</a></li>
-                  <li><a href="/hb-meters" className="block py-1.5 hover:text-blue-600">HB Meters</a></li>
-                  <li><a href="/poct" className="block py-1.5 hover:text-blue-600">POCT</a></li>
-                  <li><a href="/microscopes" className="block py-1.5 hover:text-blue-600">Microscopes</a></li>
-                  <li><a href="/centrifuges" className="block py-1.5 hover:text-blue-600">Centrifuges</a></li>
+                  <li><a href="hematology" className="block py-1.5 hover:text-blue-600">Hematology Analyzer & Reagents</a></li>
+                  <li><a href="biochemistry" className="block py-1.5 hover:text-blue-600">Biochemistry Analyzer & Reagents</a></li>
+                  <li><a href="electrolyte" className="block py-1.5 hover:text-blue-600">Electrolyte Analyzer</a></li>
+                  <li><a href="immunoassay" className="block py-1.5 hover:text-blue-600">Immunoassay Analyzer</a></li>
+                  <li><a href="coagulation" className="block py-1.5 hover:text-blue-600">Coagulation Analyzer</a></li>
+                  <li><a href="urine-analyzer" className="block py-1.5 hover:text-blue-600">Urine Analyzer & Strips</a></li>
+                  <li><a href="elisa" className="block py-1.5 hover:text-blue-600">Elisa Reader & Washer</a></li>
+                  <li><a href="protien" className="block py-1.5 hover:text-blue-600">Protine Analyzer</a></li>
+                  <li><a href="electrophoresis" className="block py-1.5 hover:text-blue-600">Electrophoresis</a></li>
+                  <li><a href="turbidometers" className="block py-1.5 hover:text-blue-600">Turbidometers</a></li>
+                  <li><a href="hplc" className="block py-1.5 hover:text-blue-600">HPLC Systems</a></li>
+                  <li><a href="blood-gas" className="block py-1.5 hover:text-blue-600">Blood Gas Analyzer</a></li>
+                  <li><a href="hb-meters" className="block py-1.5 hover:text-blue-600">HB Meters</a></li>
+                  <li><a href="poct" className="block py-1.5 hover:text-blue-600">POCT</a></li>
+                  <li><a href="microscopes" className="block py-1.5 hover:text-blue-600">Microscopes</a></li>
+                  <li><a href="centrifuges" className="block py-1.5 hover:text-blue-600">Centrifuges</a></li>
                 </ul>
               </li>
 
               {/* Services Link */}
               <li className="border-b border-gray-50 pb-2">
-                <a href="/" className="block py-2 hover:text-blue-600 transition-colors">Services</a>
+                <a href="services" className="block py-2 hover:text-blue-600 transition-colors">Services</a>
               </li>
 
               {/* Our Team Link */}
               <li className="border-b border-gray-50 pb-2">
-                <a href="/" className="block py-2 hover:text-blue-600 transition-colors">Our Team</a>
+                <a href="our-team" className="block py-2 hover:text-blue-600 transition-colors">Our Team</a>
               </li>
 
               {/* Gallery Link */}
               <li className="border-b border-gray-50 pb-2">
-                <a href="/" className="block py-2 hover:text-blue-600 transition-colors">Gallery</a>
+                <a href="gallery" className="block py-2 hover:text-blue-600 transition-colors">Gallery</a>
               </li>
 
               {/* Contact us Link */}
               <li className="border-b border-gray-50 pb-2">
-                <a href="/" className="block py-2 hover:text-blue-600 transition-colors">Contact us</a>
+                <a href="contactus" className="block py-2 hover:text-blue-600 transition-colors">Contact us</a>
               </li>
             </ul>
 

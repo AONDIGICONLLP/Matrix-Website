@@ -202,7 +202,7 @@ export const HematologyCategoryPage: React.FC = () => {
                   <li className="breadcrumb-item active text-slate-500" aria-current="page">Products</li>
                 </ol>
                 <h2 className="breadcrumb-title text-2xl md:text-4xl font-black">
-                  Blood Gas Analyzer
+                  POCT
                 </h2>
               </nav>
             </div>

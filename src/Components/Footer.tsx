@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                   </h6>
                   <div className="max-w-[160px] pt-1">
                     <img 
-                      src="assets/img/matrix.png" 
+                      src="assets/img/matrix-tm.png" 
                       alt="Matrix Logo" 
                       className="w-full h-auto" 
                       loading="lazy"
@@ -37,11 +37,11 @@ export const Footer: React.FC = () => {
                   </h6>
                   <ul className="space-y-3 text-sm font-medium">
                     {[
-                      { name: 'Products', href: '/products' },
-                      { name: 'About us', href: '/aboutus' },
-                      { name: 'Services', href: '/services' },
+                      { name: 'Products', href: 'products' },
+                      { name: 'About us', href: 'aboutus' },
+                      { name: 'Services', href: 'services' },
                       { name: 'Careers', href: '#' },
-                      { name: 'Contact', href: '/contactus' }
+                      { name: 'Contact', href: 'contactus' }
                     ].map((link) => (
                       <li key={link.name}>
                         <a 
@@ -147,7 +147,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-4 text-xs font-medium text-slate-400">
               <a href="#" className="hover:text-blue-600 transition-colors">Sitemap</a>
               <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
-              <a href="/term-condition" className="hover:text-blue-600 transition-colors">Terms & Condition</a>
+              <a href="term-condition" className="hover:text-blue-600 transition-colors">Terms & Condition</a>
             </div>
           </div>
         </div>
